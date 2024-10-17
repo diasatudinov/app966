@@ -8,10 +8,80 @@
 import SwiftUI
 
 struct TabView: View {
+    @State var selectedTab = 0
+    private let tabs = ["Home", "Profile", "Settings"]
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        ZStack {
+            
+            switch selectedTab {
+            case 0:
+                Text("Home")
+
+            case 1:
+                Text("Calendar")
+
+            case 2:
+                Text("Contests")
+                
+            default:
+                Text("default")
+            }
+                VStack {
+                    Spacer()
+                    
+                    ZStack {
+                        Rectangle()
+                            .fill(Color.secondBg)
+                            .frame(height: 84)
+                            .cornerRadius(20)
+                            .shadow(radius: 4)
+                            
+                        HStack(spacing: 100) {
+                            ForEach(0..<tabs.count) { index in
+                                Button(action: {
+                                    selectedTab = index
+                                }) {
+                                    
+                                    ZStack {
+                                        VStack {
+                                            Image(systemName: icon(for: index))
+                                                .font(.system(size: 20, weight: .semibold))
+                                                .padding(.bottom, 2)
+                                        }.foregroundColor(selectedTab == index ? Color.secondaryRed : Color.gray.opacity(0.5))
+                                    }
+                                }
+                                
+                            }
+                        }.padding(.bottom, 34)
+                        
+                        
+                    }
+                    
+                }.ignoresSafeArea()
+            
+        }
+    }
+    
+    private func icon(for index: Int) -> String {
+        switch index {
+        case 0: return "house.fill"
+        case 1: return "calendar"
+        case 2: return "gauge.with.dots.needle.bottom.50percent"
+        default: return ""
+        }
+    }
+    
+    private func text(for index: Int) -> String {
+        switch index {
+        case 0: return "Home"
+        case 1: return "Procedures"
+        case 2: return "Settings"
+        default: return ""
+        }
     }
 }
+
 
 #Preview {
     TabView()
