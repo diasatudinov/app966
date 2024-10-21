@@ -12,6 +12,7 @@ struct TabView: View {
     private let tabs = ["Home", "Profile", "Settings"]
     
     @StateObject var homeVM = HomeViewModel()
+    @StateObject var calendarVM = CalendarViewModel()
     var body: some View {
         
         ZStack {
@@ -22,7 +23,7 @@ struct TabView: View {
                 
                 
             case 1:
-                Text("Calendar")
+                CalendarUIView(viewModel: calendarVM)
                 
             case 2:
                 Text("Contests")
