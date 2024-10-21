@@ -6,3 +6,13 @@
 //
 
 import Foundation
+
+struct Calendar: Hashable, Codable {
+    
+    var id = UUID()
+    var date: String
+    var location: String
+    var height: String
+    var equipments: [String]
+    
+}
