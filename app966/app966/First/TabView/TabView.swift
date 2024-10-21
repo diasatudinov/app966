@@ -10,55 +10,58 @@ import SwiftUI
 struct TabView: View {
     @State var selectedTab = 0
     private let tabs = ["Home", "Profile", "Settings"]
+    
+    @StateObject var homeVM = HomeViewModel()
     var body: some View {
         
         ZStack {
             
             switch selectedTab {
             case 0:
-                Text("Home")
-
+                HomeUIView(viewModel: homeVM)
+                
+                
             case 1:
                 Text("Calendar")
-
+                
             case 2:
                 Text("Contests")
                 
             default:
                 Text("default")
             }
-                VStack {
-                    Spacer()
+            VStack {
+                Spacer()
+                
+                ZStack {
+                    Rectangle()
+                        .fill(Color.secondBg)
+                        .frame(height: 84)
+                        .cornerRadius(20)
+                        .shadow(radius: 4)
                     
-                    ZStack {
-                        Rectangle()
-                            .fill(Color.secondBg)
-                            .frame(height: 84)
-                            .cornerRadius(20)
-                            .shadow(radius: 4)
-                            
-                        HStack(spacing: 100) {
-                            ForEach(0..<tabs.count) { index in
-                                Button(action: {
-                                    selectedTab = index
-                                }) {
-                                    
-                                    ZStack {
-                                        VStack {
-                                            Image(systemName: icon(for: index))
-                                                .font(.system(size: 20, weight: .semibold))
-                                                .padding(.bottom, 2)
-                                        }.foregroundColor(selectedTab == index ? Color.secondaryRed : Color.gray.opacity(0.5))
-                                    }
-                                }
+                    HStack(spacing: 100) {
+                        ForEach(0..<tabs.count) { index in
+                            Button(action: {
+                                selectedTab = index
+                            }) {
                                 
+                                ZStack {
+                                    VStack {
+                                        Image(systemName: icon(for: index))
+                                            .font(.system(size: 20, weight: .semibold))
+                                            .padding(.bottom, 2)
+                                    }.foregroundColor(selectedTab == index ? Color.secondaryRed : Color.gray.opacity(0.5))
+                                }
                             }
-                        }.padding(.bottom, 34)
-                        
-                        
-                    }
+                            
+                        }
+                    }.padding(.bottom, 34)
                     
-                }.ignoresSafeArea()
+                    
+                }.padding(.bottom, -14)
+                
+            }.ignoresSafeArea()
             
         }
     }

@@ -127,8 +127,8 @@ struct ReOnboardingUIView: View {
             }
             
         } else {
-            //HomeUIView(viewModel: homeVM, orderVM: orderVM)
-          
+            
+          TabView()
         }
     }
 }
