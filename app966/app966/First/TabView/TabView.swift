@@ -13,6 +13,7 @@ struct TabView: View {
     
     @StateObject var homeVM = HomeViewModel()
     @StateObject var calendarVM = CalendarViewModel()
+    @StateObject var contestsVM = ContestsViewModel()
     var body: some View {
         
         ZStack {
@@ -26,7 +27,7 @@ struct TabView: View {
                 CalendarUIView(viewModel: calendarVM)
                 
             case 2:
-                Text("Contests")
+                ContestsUIView(viewModel: contestsVM)
                 
             default:
                 Text("default")

@@ -24,6 +24,11 @@
 		2B4C50D22CC6AF3600A6A682 /* Calendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4C50D12CC6AF3600A6A682 /* Calendar.swift */; };
 		2B4C50D42CC6B04700A6A682 /* CalendarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4C50D32CC6B04700A6A682 /* CalendarCell.swift */; };
 		2B4C50D62CC6B84D00A6A682 /* NewCalendarUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4C50D52CC6B84D00A6A682 /* NewCalendarUIView.swift */; };
+		2B4C50DC2CC79CBF00A6A682 /* ContestsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4C50DB2CC79CBF00A6A682 /* ContestsViewModel.swift */; };
+		2B4C50DE2CC79CCA00A6A682 /* ContestsUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4C50DD2CC79CCA00A6A682 /* ContestsUIView.swift */; };
+		2B4C50E02CC79CD000A6A682 /* Contest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4C50DF2CC79CD000A6A682 /* Contest.swift */; };
+		2B4C50E22CC7A25800A6A682 /* ContestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4C50E12CC7A25800A6A682 /* ContestCell.swift */; };
+		2B4C50E42CC7A6E000A6A682 /* NewContestsUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4C50E32CC7A6E000A6A682 /* NewContestsUIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +50,11 @@
 		2B4C50D12CC6AF3600A6A682 /* Calendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calendar.swift; sourceTree = "<group>"; };
 		2B4C50D32CC6B04700A6A682 /* CalendarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarCell.swift; sourceTree = "<group>"; };
 		2B4C50D52CC6B84D00A6A682 /* NewCalendarUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewCalendarUIView.swift; sourceTree = "<group>"; };
+		2B4C50DB2CC79CBF00A6A682 /* ContestsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContestsViewModel.swift; sourceTree = "<group>"; };
+		2B4C50DD2CC79CCA00A6A682 /* ContestsUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContestsUIView.swift; sourceTree = "<group>"; };
+		2B4C50DF2CC79CD000A6A682 /* Contest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contest.swift; sourceTree = "<group>"; };
+		2B4C50E12CC7A25800A6A682 /* ContestCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContestCell.swift; sourceTree = "<group>"; };
+		2B4C50E32CC7A6E000A6A682 /* NewContestsUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewContestsUIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +117,7 @@
 		2B4C50B22CC1147A00A6A682 /* First */ = {
 			isa = PBXGroup;
 			children = (
+				2B4C50D72CC79C0600A6A682 /* ContestsView */,
 				2B4C50C92CC6AEF200A6A682 /* CalendarView */,
 				2B4C50BD2CC1208300A6A682 /* HomeView */,
 				2B4C50BA2CC11F1000A6A682 /* TabView */,
@@ -218,6 +229,42 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		2B4C50D72CC79C0600A6A682 /* ContestsView */ = {
+			isa = PBXGroup;
+			children = (
+				2B4C50DA2CC79C1900A6A682 /* Model */,
+				2B4C50D92CC79C1500A6A682 /* View */,
+				2B4C50D82CC79C0F00A6A682 /* ViewModel */,
+			);
+			path = ContestsView;
+			sourceTree = "<group>";
+		};
+		2B4C50D82CC79C0F00A6A682 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				2B4C50DB2CC79CBF00A6A682 /* ContestsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		2B4C50D92CC79C1500A6A682 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				2B4C50DD2CC79CCA00A6A682 /* ContestsUIView.swift */,
+				2B4C50E12CC7A25800A6A682 /* ContestCell.swift */,
+				2B4C50E32CC7A6E000A6A682 /* NewContestsUIView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		2B4C50DA2CC79C1900A6A682 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2B4C50DF2CC79CD000A6A682 /* Contest.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -289,14 +336,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B4C50A42CC1136300A6A682 /* ContentView.swift in Sources */,
+				2B4C50DE2CC79CCA00A6A682 /* ContestsUIView.swift in Sources */,
+				2B4C50E02CC79CD000A6A682 /* Contest.swift in Sources */,
+				2B4C50DC2CC79CBF00A6A682 /* ContestsViewModel.swift in Sources */,
 				2B4C50D42CC6B04700A6A682 /* CalendarCell.swift in Sources */,
 				2B4C50A22CC1136300A6A682 /* app966App.swift in Sources */,
 				2B4C50C22CC1210600A6A682 /* HomeUIView.swift in Sources */,
 				2B4C50C42CC664E200A6A682 /* HomeViewModel.swift in Sources */,
+				2B4C50E42CC7A6E000A6A682 /* NewContestsUIView.swift in Sources */,
 				2B4C50C82CC66EA000A6A682 /* EditUIView.swift in Sources */,
 				2B4C50C62CC6650500A6A682 /* Home.swift in Sources */,
 				2B4C50D02CC6AF2A00A6A682 /* CalendarUIView.swift in Sources */,
 				2B4C50B92CC1187900A6A682 /* UsOnboardingUIView.swift in Sources */,
+				2B4C50E22CC7A25800A6A682 /* ContestCell.swift in Sources */,
 				2B4C50B72CC114AA00A6A682 /* ReOnboardingUIView.swift in Sources */,
 				2B4C50D62CC6B84D00A6A682 /* NewCalendarUIView.swift in Sources */,
 				2B4C50D22CC6AF3600A6A682 /* Calendar.swift in Sources */,
