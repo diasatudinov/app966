@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+struct Contest: Hashable, Codable {
+    var id = UUID()
+    var date: String
+    var location: String
+    var height: String
+    var note: String
+}
