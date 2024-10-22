@@ -12,8 +12,51 @@ class HomeViewModel: ObservableObject {
     @Published var home: Home = Home(resultHeight: "0", resultTime: "0", resultAvgSpeed: "0", goalHeight: "0", goalTime: "0", lifts: 0, goalLifts: 0) {
         didSet {
             calculateProgress(lifts: home.lifts, goalLifts: home.goalLifts)
+            save()
         }
     }
+    
+    private let fileName = "home.json"
+    
+    init() {
+        load()
+        calculateProgress(lifts: home.lifts, goalLifts: home.goalLifts)
+    }
+    
+    private func getDocumentsDirectory() -> URL {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        return paths[0]
+    }
+    
+    private func filePath() -> URL {
+        return getDocumentsDirectory().appendingPathComponent(fileName)
+    }
+    
+   
+    
+    private func save() {
+        DispatchQueue.global().async {
+            let encoder = JSONEncoder()
+            do {
+                let data = try encoder.encode(self.home)
+                try data.write(to: self.filePath())
+            } catch {
+                print("Failed to save players: \(error.localizedDescription)")
+            }
+        }
+    }
+    
+    
+    private func load() {
+        let decoder = JSONDecoder()
+        do {
+            let data = try Data(contentsOf: filePath())
+            home = try decoder.decode(Home.self, from: data)
+        } catch {
+            print("Failed to load players: \(error.localizedDescription)")
+        }
+    }
+    
     @Published var progress = 0.0
     
     private func calculateProgress(lifts: Double, goalLifts: Double) {
