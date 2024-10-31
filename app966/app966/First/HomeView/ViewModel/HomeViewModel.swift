@@ -5,7 +5,8 @@
 //  Created by Dias Atudinov on 21.10.2024.
 //
 
-import Foundation
+import SwiftUI
+import StoreKit
 
 class HomeViewModel: ObservableObject {
     
@@ -90,5 +91,28 @@ class HomeViewModel: ObservableObject {
     func editLifts(newLifts: Double, newGoalLifts: Double) {
         home.lifts = newLifts
         home.goalLifts = newGoalLifts
+    }
+    
+    // MARK: - Settings
+    
+    func shareApp() {
+        guard let url = URL(string: "https://itunes.apple.com/app/id6737631485") else { return }
+        let activityVC = UIActivityViewController(activityItems: [url], applicationActivities: nil)
+        
+        if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+           let rootViewController = windowScene.windows.first?.rootViewController {
+            rootViewController.present(activityVC, animated: true, completion: nil)
+        }
+    }
+    
+    func rateApp() {
+        SKStoreReviewController.requestReview()
+    }
+    
+    func openUsagePolicy() {
+        guard let url = URL(string: "https://www.termsfeed.com/live/4a75e88c-b079-457d-81ed-7538c6dc5a8f") else { return }
+        if UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
     }
 }
