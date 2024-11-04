@@ -8,7 +8,7 @@
 import Foundation
 
 class CalendarViewModel: ObservableObject {
-    @Published var calendars: [Calendar] = [
+    @Published var calendars: [CalendarMain] = [
 //        Calendar(date: "December 25, 2023", location: "Miami, USA", height: "3,2 Metrs", equipments: ["Surfboard", "Wetsuit"]),
 //        Calendar(date: "December 25, 2023", location: "Miami, USA", height: "3,2 Metrs", equipments: ["Surfboard", "Wetsuit"]),
 //        Calendar(date: "December 25, 2023", location: "Miami, USA", height: "3,2 Metrs", equipments: ["Surfboard", "Wetsuit"]),
@@ -58,17 +58,17 @@ class CalendarViewModel: ObservableObject {
         let decoder = JSONDecoder()
         do {
             let data = try Data(contentsOf: filePath())
-            calendars = try decoder.decode([Calendar].self, from: data)
+            calendars = try decoder.decode([CalendarMain].self, from: data)
         } catch {
             print("Failed to load players: \(error.localizedDescription)")
         }
     }
     
-    func addCalendar(_ calendar: Calendar) {
+    func addCalendar(_ calendar: CalendarMain) {
         calendars.append(calendar)
     }
     
-    func deleteCalendar(_ calendar: Calendar) {
+    func deleteCalendar(_ calendar: CalendarMain) {
         if let index = calendars.firstIndex(where: { $0.id == calendar.id }) {
             calendars.remove(at: index)
         }

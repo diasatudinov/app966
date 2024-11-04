@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Calendar: Hashable, Codable {
+struct CalendarMain: Hashable, Codable {
     
     var id = UUID()
     var date: String

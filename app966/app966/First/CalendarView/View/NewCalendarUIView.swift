@@ -189,7 +189,7 @@ struct NewCalendarUIView: View {
                 
                 Button {
                     if !date.isEmpty && !location.isEmpty && !height.isEmpty && !selectedEquips.isEmpty {
-                       let calendar = Calendar(date: date, location: location, height: height, equipments: selectedEquips)
+                       let calendar = CalendarMain(date: date, location: location, height: height, equipments: selectedEquips)
                         viewModel.addCalendar(calendar)
                         presentationMode.wrappedValue.dismiss()
                     }

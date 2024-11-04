@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct CalendarCell: View {
-    @State var calendar: Calendar
+    @State var calendar: CalendarMain
     var onDelete: () -> Void
     var body: some View {
         ZStack {
@@ -85,5 +85,5 @@ struct CalendarCell: View {
 }
 
 #Preview {
-    CalendarCell(calendar: Calendar(date: "December 25, 2023", location: "Miami, USA", height: "3,2 Metrs", equipments: ["Surfboard", "Wetsuit"]), onDelete: {})
+    CalendarCell(calendar: CalendarMain(date: "December 25, 2023", location: "Miami, USA", height: "3,2 Metrs", equipments: ["Surfboard", "Wetsuit"]), onDelete: {})
 }

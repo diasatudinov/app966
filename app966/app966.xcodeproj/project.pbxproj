@@ -29,6 +29,8 @@
 		2B4C50E02CC79CD000A6A682 /* Contest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4C50DF2CC79CD000A6A682 /* Contest.swift */; };
 		2B4C50E22CC7A25800A6A682 /* ContestCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4C50E12CC7A25800A6A682 /* ContestCell.swift */; };
 		2B4C50E42CC7A6E000A6A682 /* NewContestsUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B4C50E32CC7A6E000A6A682 /* NewContestsUIView.swift */; };
+		2B514F5F2CD8FB16004A34A6 /* DeviceInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B514F5E2CD8FB16004A34A6 /* DeviceInfo.swift */; };
+		2B514F622CD8FCDB004A34A6 /* WUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B514F612CD8FCDB004A34A6 /* WUIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +57,8 @@
 		2B4C50DF2CC79CD000A6A682 /* Contest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Contest.swift; sourceTree = "<group>"; };
 		2B4C50E12CC7A25800A6A682 /* ContestCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContestCell.swift; sourceTree = "<group>"; };
 		2B4C50E32CC7A6E000A6A682 /* NewContestsUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewContestsUIView.swift; sourceTree = "<group>"; };
+		2B514F5E2CD8FB16004A34A6 /* DeviceInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceInfo.swift; sourceTree = "<group>"; };
+		2B514F612CD8FCDB004A34A6 /* WUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WUIView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,7 +133,9 @@
 		2B4C50B32CC1147F00A6A682 /* Second */ = {
 			isa = PBXGroup;
 			children = (
+				2B514F602CD8FCC3004A34A6 /* WebView */,
 				2B4C50B52CC1149700A6A682 /* Onboarding */,
+				2B514F5E2CD8FB16004A34A6 /* DeviceInfo.swift */,
 			);
 			path = Second;
 			sourceTree = "<group>";
@@ -265,6 +271,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		2B514F602CD8FCC3004A34A6 /* WebView */ = {
+			isa = PBXGroup;
+			children = (
+				2B514F612CD8FCDB004A34A6 /* WUIView.swift */,
+			);
+			path = WebView;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -335,6 +349,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B514F622CD8FCDB004A34A6 /* WUIView.swift in Sources */,
 				2B4C50A42CC1136300A6A682 /* ContentView.swift in Sources */,
 				2B4C50DE2CC79CCA00A6A682 /* ContestsUIView.swift in Sources */,
 				2B4C50E02CC79CD000A6A682 /* Contest.swift in Sources */,
@@ -342,6 +357,7 @@
 				2B4C50D42CC6B04700A6A682 /* CalendarCell.swift in Sources */,
 				2B4C50A22CC1136300A6A682 /* app966App.swift in Sources */,
 				2B4C50C22CC1210600A6A682 /* HomeUIView.swift in Sources */,
+				2B514F5F2CD8FB16004A34A6 /* DeviceInfo.swift in Sources */,
 				2B4C50C42CC664E200A6A682 /* HomeViewModel.swift in Sources */,
 				2B4C50E42CC7A6E000A6A682 /* NewContestsUIView.swift in Sources */,
 				2B4C50C82CC66EA000A6A682 /* EditUIView.swift in Sources */,
@@ -500,7 +516,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.asa.kut0s8rfe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -533,7 +549,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.asa.kut0s8rfe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
